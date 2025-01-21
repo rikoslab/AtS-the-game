@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4e7axkxft6eb"]
+
+[ext_resource type="PackedScene" uid="uid://bjoqwb7w46ysk" path="res://player.tscn" id="1_j7gln"]
+[ext_resource type="PackedScene" uid="uid://b736wpgunn4oo" path="res://arm.tscn" id="2_hdhtb"]
+[ext_resource type="PackedScene" uid="uid://cowawkr0rtwwj" path="res://mob.tscn" id="3_13po0"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_j7gln")]
+position = Vector2(319, 290)
+
+[node name="arm" parent="." node_paths=PackedStringArray("mob", "player") instance=ExtResource("2_hdhtb")]
+position = Vector2(319, 292)
+mob = NodePath("../mob")
+player = NodePath("../Player")
+
+[node name="mob" parent="." instance=ExtResource("3_13po0")]
+position = Vector2(609, 302)
