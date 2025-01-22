@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var direction = Vector2.ZERO
-var Accel = 500
-var Speed = 800
-var Frict = 700
+var Accel = 1000
+var Speed = 500
+var Frict = 1000
 
 func _process(delta):
 	direction.x = Input.get_axis("Left", "Right")

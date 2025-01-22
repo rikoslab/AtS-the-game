@@ -1,11 +1,13 @@
 extends Area2D
 
+@onready var label: Label = $Label
 @onready var arm: Sprite2D = $Sprite2D
-@export var mob : Node2D
+@export var mob : CharacterBody2D
 @export var player: CharacterBody2D
 @export var max_speed: float = 20.0
 @export var Damage_trhhold: float = 18.0
 @export var Damage = 1
+@export var Stamina = 200 
 
 var Accel = 8.0
 var Frict = 12.0
@@ -37,11 +39,10 @@ func playerActInput(delta):
 	rotation += cur_speed * spin_direct * delta
 
 func _process(delta):
-	print(cur_speed)
-	print(spin_direct)
+	
 	global_position = player.global_position
 	playerActInput(delta)
 
 func _on_body_entered(mob):
-	if mob.is_in_group("enemy") and cur_speed >= Damage_trhhold:
+	if mob.has_method("take_damage") and cur_speed >= Damage_trhhold:
 		mob.take_damage(Damage)

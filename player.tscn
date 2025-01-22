@@ -75,3 +75,9 @@ scale = Vector2(0.114082, 0.120573)
 sprite_frames = SubResource("SpriteFrames_ks5de")
 animation = &"RUN"
 autoplay = "IDLE"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -78.0
+offset_right = 20.0
+offset_bottom = -55.0
